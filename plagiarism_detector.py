@@ -10,7 +10,7 @@ def clean_text(essay_path):
  # it will remove the case sensitivity when we are comparing the words in those essays
         raw_text = essay_file.read().lower()
 
-        #this loops goes into every punctuation mark each time it runs and replaces it witj an empty string.
+        #this loops goes into every punctuation mark each time it runs and replaces it with an empty string.
         # for example: 'brother,' will become 'brother'.
 
         for punctuation_mark in string.punctuation:
@@ -55,6 +55,8 @@ def find_common_words(essay1_words, essay2_words):
 def search_word(user_input, essay1_words, essay2_words):
     # this function receive the user word they want to search for. 
     # added a default function to clean the usr input by converting it into lowercase.
+    #strip() removes any leading or trailing whitespace, 
+    # and string.punctuation removes any punctuation from the user input.
 
     cleaned_input = user_input.lower().strip(string.punctuation)
 
@@ -141,7 +143,7 @@ def main():
 
     # 'is False' is more precise than '== False' when checking a boolean
     if search_results is False:
-        print(f"The word '{user_input}' was not found in either essay.")
+        print(f"The word '{user_input}' was not found in both essays.")
     else:
         # 'essay1' and 'essay2' are the keys returned by search_word()
         print(f"'{user_input}' → Essay1: {search_results['essay1']} time(s) | Essay2: {search_results['essay2']} time(s)")
