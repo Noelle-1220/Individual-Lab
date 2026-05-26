@@ -120,7 +120,7 @@ def main():
     print(f"Essay 1 loaded: {len(essay1_words)} words")
     print(f"Essay 2 loaded: {len(essay2_words)} words")
 
-    print("\n^^^ Finding common words ^^^")
+    print("\n Finding common words ")
     results = find_common_words(essay1_words, essay2_words)
     print(f"Total common words found: {len(results)}")
 
@@ -130,14 +130,14 @@ def main():
         print(f"  '{shared_word}' → Essay1: {counts['essay1_count']} time(s) | Essay2: {counts['essay2_count']} time(s)")
 
     # results is reassigned here to hold the plagiarism score output
-    print("\n^^^ Plagiarism Score ^^^")
+    print("\n Plagiarism Score ")
     results = plagiarism_score(essay1_words, essay2_words)
     print(f"Words in common: {results['overlap']}")
     print(f"Total unique words: {results['unique_count']}")
     print(f"Plagiarism Score: {results['score']}%")
     print(f"Verdict: {results['verdict']}")
 
-    print("\n^^^ Word Search ^^^")
+    print("\n Word Search ")
     user_input = input("Type a word to search across both essays: ")
     search_results = search_word(user_input, essay1_words, essay2_words)
 
